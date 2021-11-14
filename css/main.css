@@ -1,0 +1,99 @@
+@charset "utf-8";
+/* 초기화 */
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+
+/* 숨김 컨텐츠 */
+/* left를 음수값을 주어서 웹브라우저 밖으로 이동시켜 보이지 않게 함 */
+.hidden {
+  position: absolute;
+  left: -9999em;
+}
+
+/* skip menu */
+/* 건너뛰기 링크 */
+#skipNav {
+  position: absolute;
+  left: -9999em;
+}
+
+#skipNav:focus {
+  left: 0;
+  padding: 5px 15px;
+  color: #fff;
+  background-color: #000;
+  z-index: 10;
+  outline: 0;
+}
+
+/* header */
+header {
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+}
+header .inner {
+	width: 1180px;
+	height: 120px;
+	margin: 0px auto;
+	position: relative;
+  left: 0px;
+  top: 0px;
+}
+header .inner h1 {
+	position: absolute;
+  display: block;
+  overflow: hidden;
+  left: 0px;
+  width: 200px;
+  height: 120px;
+  background-color: #d21410;
+  white-space: nowrap;
+}
+header .inner h1 a {
+  display: inline-block;
+	font: bold 30px "serif";
+  text-align: center;
+  line-height: 120px;
+	color: #fff;
+}
+header .inner span {
+  font-size: 16px;
+}
+header .inner .util {
+  position: absolute;
+	top: 20px;
+	right: 0px;
+}
+header .inner .util li {
+  float: left;
+}
+header .inner .util li a {
+  display: block;
+	font: 12px "arial";
+	color: #999;
+	padding: 0px 10px;
+}
+
+#gnb {
+  position: absolute;
+}
+
+#gnb > li {
+  display: block;
+  float: left;
+  font: bold 15px "arial";
+	color: #555;
+	padding: 20px 40px;
+	transition: all 0.5s;
+} 
+
+
