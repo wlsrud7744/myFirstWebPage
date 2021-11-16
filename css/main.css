@@ -60,27 +60,52 @@ header .inner {
 
 /* 로고 */
 header .inner h1 {
+  position: absolute;
   display: inline-block;
   overflow: hidden;
   background-color: #d21410;
+  box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
+  left: -80px;
   width: 200px;
   height: 120px;
   margin-top: 20px;
+  z-index: 20;
+  animation: trancelogo 2.5s alternate 2;
+  animation-delay: 0.5s;
 }
+@keyframes trancelogo {from {width: 200px;}to {width: 500px;}}
+
 header .inner h1 a {
   display: inline-block;
-  box-sizing: border-box;
+  width: 200px;
   text-indent: 20px;
   font-size: 24px;
   line-height: 120px;
 	color: #fff;
 }
+
+header .inner h1 a::after {
+  content: "";
+  width: 5px;
+  height: 90%;
+  position: absolute;
+  top: 5px;
+  left: 200px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #d21410 0%, #eee 100%);
+  z-index: 50;
+}
+
+
 header .inner span {
   display: inline-block;
-  padding-left: 10px;
-  font-size: 16px;
+  padding-left: 18px;
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
+
 
 /* 탑메뉴 */
 header .inner .util {
@@ -88,14 +113,28 @@ header .inner .util {
 	top: 30px;
 	right: 0px;
 }
+
 header .inner .util li {
   float: left;
 }
+header .inner .util li:hover > a {
+  color: darkred;
+}
+
 header .inner .util li a {
   display: block;
 	font: 12px "arial";
 	color: #999;
-	padding: 0px 10px;
+	padding: 0px 5px;
+}
+
+.util li a::after {
+  content: ":";
+  padding-left: 11px;
+}
+
+.util li:last-child a::after {
+  content: "";
 }
 
 /* 메인메뉴 */
@@ -106,29 +145,16 @@ header .inner .util li a {
   top: 55px;
   margin-left: 30px;
 }
+
 #gnb > li {
   float: left;
-  box-sizing: border-box;
-  z-index: 10;
+  top: 0px;
   padding-bottom: 45px;
-  margin-left: 50px;
-}
-#gnb li, #gnb a {
-  display: inline-block;
-}
-#gnb > li:hover ul {
-  display: block;
-  height: 40px;
-}
-
-#gnb > li:hover > a {
-  border-bottom: 4px solid #d21410;
-  border-radius: 0 0 3px 3px;
-  color: #d51410;
-  transition: 0.5s ease; 
+  margin-right: 60px;
 }
 
 #gnb > li > a {
+  display: inline-block;
   font-size: 18px;
   font-weight: bold;
   color:#555;
@@ -138,25 +164,58 @@ header .inner .util li a {
   margin-bottom: 10px;
 }
 
-.subMenu {
-  display: none;
+#gnb:hover .bigmenu {
+  display: block;
+  transition: height 0.1s;
+}
+
+#gnb > li:hover > a {
+  border-bottom: 4px solid #d21410;
+  border-radius: 0 0 3px 3px;
+  color: #d51410;
+  transition: 0.5s ease; 
+}
+
+#gnb > li:hover .subMenu > li {
+  display: inline-block;
+}
+
+.bigmenu {
   position: fixed;
+  display: none;
+  margin-top: 0px;
+  top: 100px;
   left: 0px;
   width: 100%;
-  color: #000;
-  background-color: #fff;
+  height: 40px;
   z-index: -1;
+  background-color: #fff;
+  overflow: hidden;
+  animation: big 0.5s ease;
+}
+@keyframes big {from {height: 0px;}to {height: 40px;}}
+
+.subMenu {
+  position: absolute;
+  margin-top: 5px;
+  margin-left: -8px;
+  z-index: 0;
+  text-align: left;
 }
 
 .subMenu li {
+  display: none;
   overflow: hidden;
   white-space: nowrap;
+  text-align: center;
   line-height: 30px;
-  padding: 5px 0px 2px 0px;
 }
-.subMenu li:hover {
- color: #d21410;
+
+.subMenu li:hover a{
+ color: darkred;
+ font-weight: bold;
 }
+
 .subMenu li a {
   color: #555;
 }
@@ -169,21 +228,11 @@ header .inner .util li a {
   content: "";
 }
 
-.aboutM li:first-child {
-  padding-left: 522px;
-}
-.aboutPerformencd li:first-child {
-  padding-left: 695px;
-}
-.aboutEvent li:first-child {
-  padding-left: 844px;
-}
-.notice li:first-child {
-  padding-left: 981px;
-}
 
+/* 비주얼 영역 */
 #visual {
   position: relative;
+  width: 100%;
   top: 100px;
 }
 #sideQickMenu {
