@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>M-Artcenter</title>
-	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -84,21 +84,20 @@
 			<div class="inner">
 				<h2 class="hidden">바로가기 메뉴</h2>
 				<ul class="shortcut">
-					<li><a href=""></a>티켓 예매</li>
-					<li><a href=""></a>대관 안내</li>
-					<li><a href=""></a>오시는 길</li>
-					<li><a href=""></a>채용 공고</li>
-					<li><a href=""></a>제휴 할인</li>
+					<li><a href="#"><img src="./images/btn_n_reservation_s_off.gif" alt="티켓예매"><span class="hidden">티켓 예매</span></a><li>
+					<li><a href="#"><img src="./images/btn_n_rental_s_off.gif" alt="대관안내"><span class="hidden">대관 안내</span></a></li>
+					<li><a href="#"><img src="./images/btn_n_way_s_off.gif" alt="오시는길"><span class="hidden">오시는 길</span></a></li>
+					<li><a href="#"><img src="./images/btn_n_recruit_s_off.gif" alt="채용공고"><span class="hidden">채용 공고</span></a></li>
+					<li><a href="#"><img src="./images/btn_n_discount_s_off.gif" alt="제휴할인 바로가기"><span class="hidden">제휴 할인</span></a></li>
 				</ul>
 			</div>
 		</nav>
 		<!-- 이미지 영역 -->
 		<figure id="mainImg">
-			<img src="./images/mainImg.jpg" alt="지킬앤하이드 포스터 이미지">
-			<video src="./images/main.mp4" autoplay muted loop></video>
 			<div class="inner">
 				<h2 class="hidden">현재 공연 이미지</h2>
-				<a href="#">지금 예매</a>
+				<img src="./images/mainImg.jpg" alt="지킬앤하이드 포스터 이미지">
+				<video src="./images/main.mp4" autoplay muted loop></video>
 			</div>
 		</figure>
 	</div>
@@ -111,72 +110,81 @@
 				<div class="wrap">
 					<article>
 						<div class="pic1">
-							<img src="#" alt="1번째 콘텐츠 이미지">
+							<img src="./images/ticket.jpg" alt="1번째 콘텐츠 이미지">
 						</div>
 					</article>
 
 					<article>
 						<div class="pic2">
-							<img src="#" alt="2번째 콘텐츠 이미지">
+							<img src="./images/ticketopen.jpg" alt="2번째 콘텐츠 이미지">
 						</div>
 					</article>
 
 					<article>
 						<div class="pic3">
-							<img src="#" alt="3번째 콘텐츠 이미지">
-						</div>
-					</article>
-
-					<article>
-						<div class="showNotice">
-							<h2>공지사항</h2>
-							<a href="#">공지사항1</a>
-							<a href="#">공지사항2</a>
-							<a href="#">공지사항3</a>
-							<a href="#">공지사항4</a>
+							<img src="./images/corona_etiquette.jpg" alt="3번째 콘텐츠 이미지">
 						</div>
 					</article>
 				</div>
+				<article id="showNotice">
+					<div class="notice">
+						<img src="./images/tit_notice.gif" alt="공지사항">
+						<h2 class="hidden">공지사항</h2>
+						<a href="#">안전한 공연 관람을 위한 극장 운영 안내 2020-08-25</a>
+						<a href="#">개인정보처리방침 개정 안내 2021-11-15</a>
+						<a href="#">[오픈일시변경] 뮤지컬 <지킬앤하이드> 5차 티켓오픈 안내 2021-10-26</a>
+					</div>
+				</article>
 			</div>
 		</section>
 
-		<figure>
-			<h2 class="hidden">공연 소개 이미지 영역</h2>
-			<img src="#" alt="공연평 이미지">
-			<img src="#" alt="포스터">
-			<div class="video_box">
-				<iframe src="https://www.youtube.com/embed/sOE6i_kItmI?ecver=2" allow="autoplay; encrypted-media" width="630"
-					height="390" frameborder="0"></iframe>
+		<figure id="infoImg">
+			<div class="img_box">
+				<h2 class="hidden">공연 소개 이미지 영역</h2>
+				<img class="img1" src="./images/review1.png" alt="공연평 이미지">
+				<img class="img2" src="./images/review2.png" alt="공연평 이미지">
+				<img class="img3" src="./images/review3.png" alt="공연평 이미지">
+				<img class="img4" src="./images/review4.png" alt="공연평 이미지">
+			</div class="img_box">
 
-				<div class="boxMovieMedia">
+			<div class="video_box">
+				<p class="vedeo">
+					<iframe src="https://www.youtube.com/embed/sOE6i_kItmI?ecver=2" allow="autoplay; encrypted-media" width="640" height="400" frameborder="0"></iframe>
+				</p>
+
+			</div>
+			<div id="slideImg">
+				<div class="movebox">
 					<ul class="clfix">
-						<li><a href="./images/지킬앤하이드 상견례 스케치.jpg"></a></li>
-						<li><a href="./images/지킬_하이드 신성록.jpg"></a></li>
-						<li><a href="./images/지킬_하이드 홍광호.jpg"></a></li>
-						<li><a href="./images/지킬_하이드 류정한.jpg"></a></li>
-						<li><a href="./images/캐스트 소개.jpg"></a></li>
-						<li><a href="./images/엠마 최수진.jpg"></a></li>
-						<li><a href="./images/엠마 조정은.jpg"></a></li>
-						<li><a href="./images/엠마 민경아.jpg"></a></li>
-						<li><a href="./images/루시 윤공주.jpg"></a></li>
-						<li><a href="./images/루시 아이비.jpg"></a></li>
-						<li><a href="./images/루시 선민.jpg"></a></li>
-						<li><a href="./images/키워드인터뷰 신성록.jpg"></a></li>
-						<li><a href="./images/키워드인터뷰 홍광호.jpg"></a></li>
-						<li><a href="./images/키워드인터뷰 류정한.jpg"></a></li>
+						<li><img src="./images/지킬_하이드 신성록.jpg"><a href="#"></a></img></li>
+						<li><img src="./images/지킬앤하이드 상견례 스케치.jpg"><a href="#"></a></img></li>
+						<li><img src="./images/지킬_하이드 홍광호.jpg"><a href="#"></a></img></li>
+						<li><img src="./images/지킬_하이드 류정한.jpg"><a href="#"></a></img></li>
+						<li><img src="./images/캐스트 소개.jpg"><a href="#"></a></img></li>
+						<li><img src="./images/엠마 최수진.jpg"><a href="#"></a></img></li>
+						<li><img src="./images/엠마 조정은.jpg"><a href="#"></a></img></li>
+						<li><img src="./images/엠마 민경아.jpg"><a href="#"></a></img></li>
+						<li><img src="./images/루시 윤공주.jpg"><a href="#"></a></img></li>
+						<li><img src="./images/루시 아이비.jpg"><a href="#"></a></img></li>
+						<li><img src="./images/루시 선민.jpg"><a href="#"></a></img></li>
+						<li><img src="./images/키워드인터뷰 신성록.jpg"><a href="#"></a></img></li>
+						<li><img src="./images/키워드인터뷰 홍광호.jpg"><a href="#"></a></img></li>
+						<li><img src="./images/키워드인터뷰 류정한.jpg"><a href="#"></a></img></li>
 					</ul>
 				</div>
+				<button class="btnleft"><img src="./images/btn_movie_left.gif" alt="왼쪽으로 이동"></button>
+				<button class="btnright"><img src="./images/btn_movie_right.gif" alt="오른쪽으로 이동"></button>
 			</div>
 		</figure>
-
+		
 	</div>
-
-
+	
+	
 	<!-- 풋터영역 -->
 	<footer>
 		<div class="inner">
 			<div class="upper">
-				<h1>M-artcenter</h1>
+				<h1>M - artcenter</h1>
 				<ul>
 					<li><a href="#">Policy</a></li>
 					<li><a href="#">Terms</a></li>
@@ -184,7 +192,7 @@
 					<li><a href="#">Sitemap</a></li>
 				</ul>
 			</div>
-
+			
 			<div class="lower">
 				<address>
 					경기도 성남시 분당구 미금동234<br>
@@ -195,6 +203,7 @@
 				</p>
 			</div>
 		</div>
+		<button class="btnScrollTop"><img src="/images/btn_scroll_top.gif" alt="맨 위로 이동"><a href="#"></a></button>
 	</footer>
 </body>
 
