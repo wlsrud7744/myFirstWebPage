@@ -118,8 +118,15 @@ header .inner .util {
 header .inner .util li {
   float: left;
 }
+
 header .inner .util li:hover > a {
-  color: darkred;
+  color: rgb(156, 0, 0);
+  font-weight: bold;
+}
+
+header .inner .util li:hover > a::after {
+  color: #999;
+  font-weight: normal;
 }
 
 header .inner .util li a {
