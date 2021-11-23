@@ -6,8 +6,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>M-Artcenter</title>
-	<link rel="stylesheet" href="./css/join.css">
-	<link rel="stylesheet" href="./css/common.css">
+	<link rel="stylesheet" href="./css/login.css">
+  <link rel="stylesheet" href="/css/common.css">
 </head>
 
 <body>
@@ -79,78 +79,50 @@
 	</div>
 
 	<!-- 메인 컨텐츠 영역 시작 -->
-
-	<div id="contentsArea">
-		<!-- 회원가입 영역 시작 -->
-		<section class="memberJoin">
+ <div id="contentsArea">
+	 <!-- 로그인 영역 시작 -->
+		<div class="loginAarea">
 			<!-- 내부 탑메뉴 -->
 			<div class="topMenu2">
-				<p class="location">Home  &gt; <strong>회원가입</strong></p>
-				<h2>회원가입</h2>
-				<p class="formInfo"><strong class="require">필수</strong> 는 필수 항목입니다.</p>
+				<p class="location">Home  &gt; <strong>Login</strong></p>
+				<h2>로그인</h2>
 			</div>
-			<form action="join.jsp" method="post" id="joinForm" name="joinForm">
-				<fieldset>
-					<legend>회원가입 정보 입력 폼</legend>
-					<p>
-						<label for="userName">이름<strong class="require">필수</strong></label>
-						<input type="text" id="userName" name="userName" required placeholder="홍길동" size="25">
-					</p>
-
-					<p>
-						<label for="userID">아이디<strong class="require">필수</strong></label>
-						<input type="text" id="userID" name="userID" required placeholder="Guest" size="25">
-						<a href="#" class="idcheck">ID중복확인</a>
-						<!-- <input type="button" value="ID중복확인"> -->
-					</p>
-
-					<p>
-						<label for="password">비밀번호<strong class="require">필수</strong></label>
-						<input type="password" id="password" name="password" required size="25">
-						<span class="req"> ※ 영문/숫자 특수문자포함 8자이상</span>
-					</p>
-
-					<p>
-						<label for="confirmPassword">비밀번호 확인<strong class="require">필수</strong></label>
-						<input type="password" id="confirmPassword" required size="25">
-					</p>
-
-					<p>
-						<label for="address" class="labelAddress">주 소</label>
-						<a href="#" class="findZipcode">우편번호 찾기</a>
-						<input type="text" id="zipcode" name="zipcode" maxlength="5" size="8">
-						<input type="text" id="address1" name="address1" maxlength="100" size="60" readonly>
-						<input type="text" id="address2" name="address2" maxlength="100" size="60">
-					</p>
-
-					<p>
-						<label for="tel">전화번호<strong class="require">필수</strong></label>
-						<input type="tel" id="tel" name="tel" size placeholder="예) 01042542375" maxlength="11" size="40" title="하이픈(-)은 입력할 수 없습니다.">
-					</p>
-
-					<p>
-						<label for="email">이메일<strong class="require">필수</strong></label>
-						<input type="email" id="email" required placeholder="예) gildong@naver.com" size="60">
-					</p>
-
-					<p class="mailing">
-						<em>메일 수신 동의</em>
-						<span> M-artcenter의 소식을 이메일로 받아보시겠어요? </span>
-						<input type="radio" id="mailingOK" name="mailing" value="yes" checked>
-						<label for="mailingOK">네. 받겠습니다</label>
-						<input type="radio" id="mailingNO" name="mailing" value="no">
-						<label for="mailingNO">아니오. 괜찮습니다</label>
-					</p>
-
-					<div class="btnJoinArea">
-						<button type="submit" class="btnOK">회원가입</button>
-						<button type="button" class="btnCancel">취소</button>
-					</div>
-				</fieldset>
-			</form>
-		</section>
-		<!-- 회원가입 영역 끝 -->
-
+			<div class="loginTitle">
+				<strong>M아트센터에 오신 것을 환영합니다.</strong>
+				로그인을 하시면 M아트센터에서 제공하는 다양한 회원 혜택을 자유롭게 이용하실 수 있습니다.
+			</div>
+			<div class="loginBox">
+				<form name="frmMain" id="frmMain" action="#" method="post" onsubmit="return goLogin();">
+					<input type="hidden" name="proc" value="" />
+					<input type="hidden" name="ReturnUrl" value="" />
+	 
+					<label for="userID">아이디</label><input type="text" id="userID" name="loginUid" maxlength="12" /><br/>
+					<label for="userPassword">비밀번호</label><input type="password" id="userPassword" name="loginPwd" maxlength="12" /><br/>
+					<input type="checkbox" title="아이디 저장" id="save_userid" name="save_userid"><label class="saveId" for="save_userid">아이디 저장</label>
+					<input type="image"  src="/images/btn_etc_login.gif"  class="btn_login_submmit" alt="로그인" />	
+				</form>
+			</div>
+	 
+			<div class="loginTitlet" style="margin-bottom:30px">
+				비밀번호를 5회 틀리실 경우, 본인인증 통한 비밀번호 재설정으로 로그인 가능합니다.
+			</div>
+			
+			<div class="loginUtil">
+				<ul class="clfix">
+					<li>아이디를 잊으셨나요?
+						<a href="#" ><img src="/images/btn_find_id.gif" alt="아이디 검색" /></a>
+					</li>
+					<li>비밀번호를 잊으셨나요?
+						<a href="#" ><img src="/images/btn_find_password.gif" alt="비밀번호 검색" /></a>
+					</li>
+					<li class="last">회원이 아니신가요?
+						<a href="#" ><img src="/images/btn_etc_join.gif" alt="회원 가입" /></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+ </div>
+	<!-- 메인 컨텐츠 영역 끝 -->
 
 		<!-- 풋터영역 -->
 		<footer>
