@@ -4,7 +4,7 @@
 
 /* 회원가입 영역 */
 .memberJoin {
-  width: 800px;
+  width: 980px;
   margin-right: 30px;
   margin: 0px auto;
   padding-top: 150px;
@@ -16,7 +16,8 @@
   margin: 30px 0px 10px;
   font-size: 12px;
   color: #666;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  padding-right: 100px;
 }
 
 .require {
@@ -40,58 +41,60 @@
 }
 
 /* 회원가입폼 */
-#joinForm {
+#frmJoin {
+  width: 800px;
+  margin-left: 90px;
   border-top: 2px solid #eee;
 }
 
-#joinForm fieldset {
+#frmJoin fieldset {
   border: 0;
 }
 
-#joinForm legend {
+#frmJoin legend {
   position: absolute;
   left: -9999;
   border: 0;
 }
 
-#joinForm p {
+#frmJoin p {
   border-bottom: 1px solid #eee;
   position: relative;
   overflow: hidden;
 }
 
-#joinForm label, .mailing em {
+#frmJoin label, .mailing em {
   float: left;
   width: 120px;
-  padding: 20px 20px;
-  margin-right: 10px;
+  padding: 10px 30px;
+  margin-right: 30px;
   margin-bottom: 2px;
   font-size: 14px;
   font-weight: bold;
   background-color: #eee;
-  letter-spacing: 1.2px;
+  letter-spacing: 2px;
 }
 
-#joinForm input::placeholder {
+#frmJoin input::placeholder {
   color: #bbb;
-  font-size: 14px;
+  font-size: 13px;
 }
 
-#joinForm input:not(#zipcode, #address) {
-  margin: 14px 0;
+#frmJoin input:not(#zipcode, #address) {
+  margin: 8px 0;
   padding: 5px 3px;
   letter-spacing: 1px;
 }
 
-#joinForm input:not([type="radio"]) {
+#frmJoin input:not([type="radio"]) {
   border: 1px solid #ddd;
-  height: 20px;
+  height: 15px;
   padding-left: 10px;
   outline-style: none;
   color: #555;
 }
 
-#joinForm input[type="radio"] {
+#frmJoin input[type="radio"] {
   margin: 0 0 0 10px;
 }
 
@@ -107,45 +110,45 @@ a.idcheck, a.findZipcode {
 }
 
 .findZipcode {
-  position:absolute;
-  left:270px;
-  top:17px;
+  position: absolute;
+  left: 310px;
+  top: 15px;
 }
 
-#joinForm #zipcode {
+#frmJoin #zipcode {
   margin: 14px 0 2px 0;
   padding: 5px 3px;
 }
 
-#joinForm .req {
+#frmJoin .req {
   display: inline-block;
   font-size: 12px;
   color: #bbb;
   margin-left: 10px;
 }
 
-#joinForm .labelAddress {
+#frmJoin .labelAddress {
   height: 90px;
   line-height: 90px;
-  padding: 25px 20px;
+  padding: 18px 30px;
 }
 
-#joinForm #address1 {
+#frmJoin #address1 {
   display: block;
   margin : 0;
 }
 
-#joinForm input#address1 {
+#frmJoin input#address1 {
   margin: 8px 0 0px 0;
   padding: 5px 3px;
 }
 
-#joinForm input#address2 {
+#frmJoin input#address2 {
   margin: 8px 0 14px 0;
   padding: 5px 3px;
 }
 
-#joinForm .mailing label {
+#frmJoin .mailing label {
   float: none;
   padding: 0;
   background: none;
@@ -163,12 +166,12 @@ a.idcheck, a.findZipcode {
   display: block;
   color: #555;
   font-size: 13px;
-  margin: 8px 0 3px 0;
+  margin-top: 5px;
 }
 
 .btnJoinArea {
   text-align: center;
-  margin: 50px 0;
+  margin-top: 40px;
 }
 
 .btnJoinArea button {
@@ -179,13 +182,17 @@ a.idcheck, a.findZipcode {
   margin: 0 20px;
   border-radius: 3px;
   letter-spacing: 5px;
+  text-shadow: 1px 1px 1px rgb(82, 82, 82);
+  box-shadow: 1px 1px 2px rgba(102, 102, 102, 0.562);
 }
 
 .btnOK {
   background: linear-gradient(to bottom, #f321289a 0%, #cf201dd8 50%, #cf201d 51%, #d21410 100%);
+  border: 1px solid #d2131096;
 }
 
 .btnCancel {
   background: linear-gradient(to bottom, rgb(95, 95, 9, 0.3) 0%, rgb(95, 95, 95, 0.9) 50%, rgba(95, 95, 95) 51%, rgb(95, 95, 95) 100%);
+  border: 1px solid rgba(95, 95, 95, 0.548);
 }
 

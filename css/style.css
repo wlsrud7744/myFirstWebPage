@@ -67,12 +67,12 @@ header .inner h1 {
   background-color: #d21410;
   box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
-  left: -80px;
+  left: 150px;
   width: 200px;
   height: 120px;
   margin-top: 20px;
   z-index: 20;
-  animation: trancelogo 2.5s alternate 2;
+  animation: trancelogo 2s alternate 2;
   animation-delay: 0.5s;
 }
 @keyframes trancelogo {from {width: 200px;}to {width: 500px;}}
@@ -149,7 +149,7 @@ header .inner .util li a {
 #gnb {
   position: absolute;
   width: 960px;
-  left: 200px;
+  left: 400px;
   top: 55px;
   margin-left: 30px;
 }
@@ -186,6 +186,7 @@ header .inner .util li a {
 
 #gnb > li:hover .subMenu > li {
   display: inline-block;
+  animation: big 0.3s ease;
 }
 
 .bigmenu {
@@ -199,7 +200,7 @@ header .inner .util li a {
   z-index: -1;
   background-color: #fff;
   overflow: hidden;
-  animation: big 0.5s ease;
+  animation: big 0.4s ease;
 }
 @keyframes big {from {height: 0px;}to {height: 40px;}}
 

@@ -83,7 +83,7 @@
 	 <!-- 로그인 영역 시작 -->
 		<div class="loginAarea">
 			<!-- 내부 탑메뉴 -->
-			<div class="topMenu2">
+			<div class="subTitle">
 				<p class="location">Home  &gt; <strong>Login</strong></p>
 				<h2>로그인</h2>
 			</div>
@@ -92,30 +92,25 @@
 				로그인을 하시면 M아트센터에서 제공하는 다양한 회원 혜택을 자유롭게 이용하실 수 있습니다.
 			</div>
 			<div class="loginBox">
-				<form name="frmMain" id="frmMain" action="#" method="post" onsubmit="return goLogin();">
-					<input type="hidden" name="proc" value="" />
-					<input type="hidden" name="ReturnUrl" value="" />
-	 
-					<label for="userID">아이디</label><input type="text" id="userID" name="loginUid" maxlength="12" /><br/>
+				<form name="frmLogin" id="frmLogin" action="#" method="post">
+					<label for="userID">아이디</label><input type="text" id="userID" name="loginID" maxlength="12" autofocus /><br/>
 					<label for="userPassword">비밀번호</label><input type="password" id="userPassword" name="loginPwd" maxlength="12" /><br/>
-					<input type="checkbox" title="아이디 저장" id="save_userid" name="save_userid"><label class="saveId" for="save_userid">아이디 저장</label>
-					<input type="image"  src="/images/btn_etc_login.gif"  class="btn_login_submmit" alt="로그인" />	
+					<input type="checkbox" title="아이디 저장" id="saveUserID" name="saveUserID"><label class="saveID" for="saveUserID" >아이디 저장</label>
+					<input type="image"  src="/images/btn_etc_login.gif"  class="btnLoginSubmmit" alt="로그인" />	
 				</form>
 			</div>
-	 
-			<div class="loginTitlet" style="margin-bottom:30px">
-				비밀번호를 5회 틀리실 경우, 본인인증 통한 비밀번호 재설정으로 로그인 가능합니다.
+			<div class="loginInfo">
+				<P>비밀번호를 5회 틀리실 경우, 본인인증 통한 비밀번호 재설정으로 로그인 가능합니다.</P>
 			</div>
-			
 			<div class="loginUtil">
 				<ul class="clfix">
-					<li>아이디를 잊으셨나요?
+					<li> 아이디를 잊으셨나요?
 						<a href="#" ><img src="/images/btn_find_id.gif" alt="아이디 검색" /></a>
 					</li>
 					<li>비밀번호를 잊으셨나요?
 						<a href="#" ><img src="/images/btn_find_password.gif" alt="비밀번호 검색" /></a>
 					</li>
-					<li class="last">회원이 아니신가요?
+					<li class="last">아직 회원이 아니신가요?
 						<a href="#" ><img src="/images/btn_etc_join.gif" alt="회원 가입" /></a>
 					</li>
 				</ul>
