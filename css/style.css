@@ -246,12 +246,17 @@ header .inner .util li a {
 	background: #000;
 	overflow: hidden;
 }
+ 
 /* 퀵메뉴 */
 #sideQickMenu {
-  position: fixed;
-  top: 30%;
+  position: relative;
+  width: 100%;
+}
+#sideQickMenu .shortcut {
+  position: absolute;
+  top: 270px;
   left: 2%;
-  z-index: 10;
+  z-index: 9990;
 }
 
 .shortcut li img {
@@ -267,7 +272,6 @@ header .inner .util li a {
   width: 100%;
   height: 100%;
   padding-top: 85px;
-  opacity: 0.4;
   z-index: 1;
 }
 
@@ -277,15 +281,15 @@ header .inner .util li a {
   width: 100%;
   height: 100%;
   padding-top: 50px;
-  opacity: 0.7;
 }
 
 /* 컨텐츠 영역 */
 section {
 	width: 100%;
-	padding-top: 150px;
-  margin: 0 30px 0 10px;
+	padding-top: 30px;
+  margin:120px 30px 0 10px;
 }
+
 section .inner {
 	width: 1280px;
 	margin: 0px auto;
@@ -294,7 +298,9 @@ section .inner {
 section .inner .wrap {
 	width: 100%;
   padding: 30px 0;
-  background-color: #eee;
+  background: linear-gradient(45deg, #333 10%, #fff 25%, #fff 35%, 
+  #333 50%, #333 50%, #fff 65%, #fff 75%, 
+  #333 95%, #333 100%) ;
   box-shadow: 2px 2px 3px #999;
 }
 section .inner .wrap::after {
@@ -317,8 +323,10 @@ section .inner .wrap article:last-child {
 
 section .inner .notice {
   width: 1180px;
+  height: 70px;
   margin: 100px auto;
   padding-left: 50px;
+  overflow: hidden;
 }
 
 section .inner .notice img {
@@ -350,8 +358,8 @@ section .inner .notice a {
   "img4 img3";
   row-gap: 40px;
   padding: 5px;
-  background-color: #000;
-  box-shadow: 7px 7px 5px #222;
+  background: #000;
+  /* box-shadow: 7px 7px 5px #222; */
 }
 
 .img_box img {
@@ -379,7 +387,6 @@ section .inner .notice a {
 .video_box {
   margin: 100px auto 50px;
   width: 640px;
-  text-align: center;
 }
 
 #slideImg {
@@ -404,6 +411,8 @@ section .inner .notice a {
   padding: 2px;
 }
 #slideImg > .btnleft {
+  width: 15px;
+  height: 28px;
   position: absolute;
   display: block;
   border: none;
@@ -411,6 +420,8 @@ section .inner .notice a {
   left: 300px;
 }
 #slideImg > .btnright{
+  width: 15px;
+  height: 28px;
   position: absolute;
   display: block;
   border: none;
@@ -472,9 +483,13 @@ footer .inner .lower p {
 	color: #777;
 }
 
-footer .btnScrollTop {
+#btnScrollTop {
+  width: 46px;
+  height: 43px;
+  box-sizing: border-box;
+  display: none;
   position: fixed;
-  border: none;
   right: 12%;
   bottom: 25%;
+  box-shadow: 1px 1px 2px rgba(85, 85, 85, 0.6);
 }

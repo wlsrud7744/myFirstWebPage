@@ -33,6 +33,7 @@
   content: "＊";
   color: #d51410;
   position: relative;
+  font-family: "MalGun Gothic","맑은 고딕";
   font-weight: bold;
   font-size: 12px;
   padding-left: 2px;
@@ -78,11 +79,12 @@
 #frmJoin input::placeholder {
   color: #bbb;
   font-size: 13px;
+  background-color: #fff;
 }
 
 #frmJoin input:not(#zipcode, #address) {
   margin: 8px 0;
-  padding: 5px 3px;
+  padding: 5px 10px;
   letter-spacing: 1px;
 }
 
@@ -99,25 +101,25 @@
 }
 
 a.idcheck, a.findZipcode {
-  font-size: 12px;
+  font-size: 10px;
   color:#fff;
-  padding: 4px 10px;
+  padding: 2px 7px;
   margin-left: 5px;
-  border-radius: 20px;
+  border-radius: 15px;
   text-shadow: 1px 1px 1px #bb060c;
   font-weight: bold;
-  background-color: #fd5f67;
+  background-color: #df1d1dde;
 }
 
 .findZipcode {
   position: absolute;
-  left: 310px;
+  left: 325px;
   top: 15px;
 }
 
 #frmJoin #zipcode {
   margin: 14px 0 2px 0;
-  padding: 5px 3px;
+  padding: 5px 10px;
 }
 
 #frmJoin .req {
@@ -140,12 +142,12 @@ a.idcheck, a.findZipcode {
 
 #frmJoin input#address1 {
   margin: 8px 0 0px 0;
-  padding: 5px 3px;
+  padding: 5px 10px;
 }
 
 #frmJoin input#address2 {
   margin: 8px 0 14px 0;
-  padding: 5px 3px;
+  padding: 5px 10px;
 }
 
 #frmJoin .mailing label {

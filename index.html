@@ -7,6 +7,51 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>M-Artcenter</title>
 	<link rel="stylesheet" href="./css/style.css">
+	<script src="./js/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			
+			setTimeout(function () {
+				$("#mainImg video").fadeIn(5000).get(0).play();
+			},2000)
+			$("#mainImg img").fadeOut(3000).delay(56000).fadeIn(2000);
+
+			//퀵메뉴 플로팅
+			const floatPosition = parseInt($("#sideQickMenu").css("top"));
+			$(window).scroll(function () {
+				let scrollTop = $(window).scrollTop();
+				let newPosition = scrollTop + floatPosition + "px";
+				$("#sideQickMenu").stop().animate({
+					top : newPosition
+				},200);
+			});
+
+			// 탑버튼 숨기기
+			$("#btnScrollTop").hide();
+			
+			//  탑버튼 나타내기
+			$(function () {
+				$(window).scroll(function () {
+					if ($(this).scrollTop() > 500) {
+						$("#btnScrollTop").fadeIn(500);
+					} else if ($(this).scrollTop() > 300){
+						$("#btnScrollTop").fadeOut(200);
+					}
+				});
+
+				// scroll body to 0px on click
+				$("#btnScrollTop").click (function () {
+					$("#btnScrollTop").animate ({
+						scrollTop: 0
+					}, 500);
+					$("#btnScrollTop").hide();
+				});
+			});
+
+
+
+		});
+	</script>
 </head>
 
 <body>
@@ -77,64 +122,70 @@
 		</header>
 	</div>
 
+	<!-- 바로가기 메뉴 영역 -->
+	<nav id="sideQickMenu">
+		<div class="inner">
+			<h2 class="hidden">바로가기 메뉴</h2>
+			<ul class="shortcut">
+				<li><a href="#"><img src="./images/btn_n_reservation_s_off.gif" alt="티켓예매"><span class="hidden">티켓 예매</span></a><li>
+				<li><a href="#"><img src="./images/btn_n_rental_s_off.gif" alt="대관안내"><span class="hidden">대관 안내</span></a></li>
+				<li><a href="#"><img src="./images/btn_n_way_s_off.gif" alt="오시는길"><span class="hidden">오시는 길</span></a></li>
+				<li><a href="#"><img src="./images/btn_n_recruit_s_off.gif" alt="채용공고"><span class="hidden">채용 공고</span></a></li>
+				<li><a href="#"><img src="./images/btn_n_discount_s_off.gif" alt="제휴할인 바로가기"><span class="hidden">제휴 할인</span></a></li>
+			</ul>
+		</div>
+	</nav>
 	<!-- 메인이미지 영역 -->
 	<div id="visual">
-		<!-- 바로가기 메뉴 영역 -->
-		<nav id="sideQickMenu">
-			<div class="inner">
-				<h2 class="hidden">바로가기 메뉴</h2>
-				<ul class="shortcut">
-					<li><a href="#"><img src="./images/btn_n_reservation_s_off.gif" alt="티켓예매"><span class="hidden">티켓 예매</span></a><li>
-					<li><a href="#"><img src="./images/btn_n_rental_s_off.gif" alt="대관안내"><span class="hidden">대관 안내</span></a></li>
-					<li><a href="#"><img src="./images/btn_n_way_s_off.gif" alt="오시는길"><span class="hidden">오시는 길</span></a></li>
-					<li><a href="#"><img src="./images/btn_n_recruit_s_off.gif" alt="채용공고"><span class="hidden">채용 공고</span></a></li>
-					<li><a href="#"><img src="./images/btn_n_discount_s_off.gif" alt="제휴할인 바로가기"><span class="hidden">제휴 할인</span></a></li>
-				</ul>
-			</div>
-		</nav>
 		<!-- 이미지 영역 -->
 		<figure id="mainImg">
 			<div class="inner">
 				<h2 class="hidden">현재 공연 이미지</h2>
 				<img src="./images/mainImg.jpg" alt="지킬앤하이드 포스터 이미지">
-				<video src="./images/main.mp4" autoplay muted loop></video>
+				<video src="./images/main.mp4" muted></video>
 			</div>
 		</figure>
 	</div>
 
 	<!-- 컨텐츠 영역 -->
 	<div id="contens">
-		<section class="notice_wrap">
+		<section class="noticeWrap">
 			<div class="inner">
 				<h2 class="hidden">공지 영역</h2>
 				<div class="wrap">
 					<article>
 						<div class="pic1">
-							<img src="./images/ticket.jpg" alt="1번째 콘텐츠 이미지">
+							<a href="#">
+								<img src="./images/ticket.jpg" alt="공지사항">
+							</a>
 						</div>
 					</article>
-
 					<article>
 						<div class="pic2">
-							<img src="./images/ticketopen.jpg" alt="2번째 콘텐츠 이미지">
+							<a href="#">
+								<img src="./images/ticketopen.jpg" alt="공지사항">
+							</a>
 						</div>
 					</article>
-
 					<article>
 						<div class="pic3">
-							<img src="./images/corona_etiquette.jpg" alt="3번째 콘텐츠 이미지">
+							<a href="#">
+								<img src="./images/corona_etiquette.jpg" alt="공지사항">
+							</a>
 						</div>
 					</article>
 				</div>
-				<article id="showNotice">
-					<div class="notice">
+				<div class="notice">
+					<article id="showNotice">
 						<img src="./images/tit_notice.gif" alt="공지사항">
 						<h2 class="hidden">공지사항</h2>
 						<a href="#">안전한 공연 관람을 위한 극장 운영 안내 2020-08-25</a>
 						<a href="#">개인정보처리방침 개정 안내 2021-11-15</a>
-						<a href="#">[오픈일시변경] 뮤지컬 <지킬앤하이드> 5차 티켓오픈 안내 2021-10-26</a>
-					</div>
-				</article>
+						<a href="#">[오픈일시변경] 뮤지컬 <지킬앤하이드> 5차 티켓오픈 안내 2021-11-26</a>
+						<a href="#"><지킬앤하이드> 공연 정상 진행 안내(11/21) 2021-11-21</a>
+						<a href="#"><지킬앤하이드> 공연 취소 안내(11/20)</a>
+						<a href="#">회원약관 개정 안내 2021-10-26</a>
+					</article>
 			</div>
 		</section>
 
@@ -203,7 +254,11 @@
 				</p>
 			</div>
 		</div>
-		<button class="btnScrollTop"><img src="/images/btn_scroll_top.gif" alt="맨 위로 이동"><a href="#"></a></button>
+		<div id="btnScrollTop">
+			<a href="#"><img src="/images/btn_scroll_top.gif" alt="맨 위로 이동"></a>
+			
+		</div>
+
 	</footer>
 </body>
 
