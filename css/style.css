@@ -215,6 +215,7 @@ header .inner .util li a {
 .subMenu li {
   display: none;
   overflow: hidden;
+  font-size: 14px;
   white-space: nowrap;
   text-align: center;
   line-height: 30px;
@@ -309,21 +310,29 @@ section .inner .wrap::after {
 	clear: both;
 }
 section .inner .wrap article {
+  box-sizing: border-box;
 	width: 320px;
+  height: 155px;
 	float: left;
   margin: 0 53px;
+  overflow: hidden;
 }
 section .inner .wrap article img {
   box-shadow: 2px 2px 5px #999;
+  width: 320px;
+}
+
+section .inner .wrap article img:hover {
+  width: 330px;
 }
 
 section .inner .wrap article:last-child {
 	margin-right: 0px;
 }
-
+/* 공지사항 글 영역 */
 section .inner .notice {
   width: 1180px;
-  height: 70px;
+  height: 80px;
   margin: 100px auto;
   padding-left: 50px;
   overflow: hidden;
@@ -331,15 +340,17 @@ section .inner .notice {
 
 section .inner .notice img {
   width: 100px;
-  height: 70px;
+  height: 80px;
   margin-right: 20px;
   float: left;
 }
 
 section .inner .notice a {
+  position: relative;
   display: inline-block;
+  margin-bottom: 5px;
   width: 960px;
-  margin: 0 0 4px 0;
+  height: 20px;
 }
 
 #infoImg {
@@ -353,9 +364,9 @@ section .inner .notice a {
   grid-template-columns: repeat(auto-fill, 640px);
   grid-template-rows: repeat(auto-fit, 300px);
   grid-template-areas: 
-  "img4 img1"
-  "img4 img2"
-  "img4 img3";
+  "rImg4 rImg1"
+  "rImg4 rImg2"
+  "rImg4 rImg3";
   row-gap: 40px;
   padding: 5px;
   background: #000;
@@ -366,67 +377,96 @@ section .inner .notice a {
   width: 500px;
   box-shadow: 7px 7px 10px #222;
 }
-.img_box .img1 {
-  grid-area: img1;
+.img_box .rImg1 {
+  grid-area: rImg1;
   margin-left: 100px;
   margin-top: 30px;
 }
-.img_box .img2 {
-  grid-area: img2;
+.img_box .rImg2 {
+  grid-area: rImg2;
   margin-left: 40px;
 }
-.img_box .img3 {
-  grid-area: img3;
+.img_box .rImg3 {
+  grid-area: rImg3;
   margin-left: 100px;
 }
-.img_box .img4 {
-  grid-area: img4;
+.img_box .rImg4 {
+  grid-area: rImg4;
   width: 620px;
+  margin: 5px 0 5px 25px;
 }
 
+/* 비디오박스 */
 .video_box {
+  position: relative;
   margin: 100px auto 50px;
   width: 640px;
+  height: 400px;
+}
+.video iframe {
+  display: inline-block;
+  position: absolute;
+  width: 640px;
+  height: 400px;
+  top: 0;
+  left: 0;
+}
+.video_box iframe:nth-of-type(1) {
+  display: inline-block;
+  position: absolute;
+  width: 640px;
+  height: 400px;
+  top: 0;
+  left: 0;
 }
 
+/* 슬라이드 이미지 */
 #slideImg {
   width: 1280px;
+  height: 200px;
   position: relative;
-  margin-bottom: 150px;
+  margin: 80px auto 100px;
 }
-#slideImg .movebox {
-  box-sizing: border-box;
-  width: 600px;
-  margin: 0px auto;
+#slideImg .movebox{
+  position: relative;
+  width: 570px;
+  height: 120px;
   overflow: hidden;
-  white-space: nowrap;
+  left: 355px;
 }
-#slideImg .movebox li {
-  display: inline-block;
-  margin: 20px 0;
+#slideImg .clfix {
+  position: relative;
+  width: 3800px;
+  height: 120px;
+  left: -380px;
 }
-#slideImg .movebox li img {
+#slideImg .clfix img {
+  width: 190px;
+  height: 120px;
   box-sizing: border-box;
-  width: 200px;
-  padding: 2px;
+  padding: 0 2px;
+  float: left;
+  cursor: pointer;
 }
-#slideImg > .btnleft {
-  width: 15px;
-  height: 28px;
+.leftRight {
   position: absolute;
-  display: block;
-  border: none;
-  top: 70px;
-  left: 300px;
+  top: 50px;
+  width: 1280px;
+  margin: 0 auto;
+  height: 30px;
 }
-#slideImg > .btnright{
+.LeftRight img {
   width: 15px;
-  height: 28px;
+}
+.btnleft {
   position: absolute;
-  display: block;
-  border: none;
-  top: 70px;
-  right: 300px;
+  left: 320px;
+  cursor: pointer;
+}
+.btnright {
+  position: absolute;
+  right: 320px;
+  cursor: pointer;
 }
 
 /* 푸터영역 */

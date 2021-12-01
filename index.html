@@ -8,50 +8,7 @@
 	<title>M-Artcenter</title>
 	<link rel="stylesheet" href="./css/style.css">
 	<script src="./js/jquery-3.6.0.min.js"></script>
-	<script>
-		$(document).ready(function () {
-			
-			setTimeout(function () {
-				$("#mainImg video").fadeIn(5000).get(0).play();
-			},2000)
-			$("#mainImg img").fadeOut(3000).delay(56000).fadeIn(2000);
-
-			//퀵메뉴 플로팅
-			const floatPosition = parseInt($("#sideQickMenu").css("top"));
-			$(window).scroll(function () {
-				let scrollTop = $(window).scrollTop();
-				let newPosition = scrollTop + floatPosition + "px";
-				$("#sideQickMenu").stop().animate({
-					top : newPosition
-				},200);
-			});
-
-			// 탑버튼 숨기기
-			$("#btnScrollTop").hide();
-			
-			//  탑버튼 나타내기
-			$(function () {
-				$(window).scroll(function () {
-					if ($(this).scrollTop() > 500) {
-						$("#btnScrollTop").fadeIn(500);
-					} else if ($(this).scrollTop() > 300){
-						$("#btnScrollTop").fadeOut(200);
-					}
-				});
-
-				// scroll body to 0px on click
-				$("#btnScrollTop").click (function () {
-					$("#btnScrollTop").animate ({
-						scrollTop: 0
-					}, 500);
-					$("#btnScrollTop").hide();
-				});
-			});
-
-
-
-		});
-	</script>
+	<script src="./js/index.js" defer></script>
 </head>
 
 <body>
@@ -122,19 +79,20 @@
 		</header>
 	</div>
 
-	<!-- 바로가기 메뉴 영역 -->
+	<!-- 퀵 메뉴 영역 -->
 	<nav id="sideQickMenu">
 		<div class="inner">
-			<h2 class="hidden">바로가기 메뉴</h2>
+			<h2 class="hidden">퀵 메뉴</h2>
 			<ul class="shortcut">
-				<li><a href="#"><img src="./images/btn_n_reservation_s_off.gif" alt="티켓예매"><span class="hidden">티켓 예매</span></a><li>
-				<li><a href="#"><img src="./images/btn_n_rental_s_off.gif" alt="대관안내"><span class="hidden">대관 안내</span></a></li>
-				<li><a href="#"><img src="./images/btn_n_way_s_off.gif" alt="오시는길"><span class="hidden">오시는 길</span></a></li>
-				<li><a href="#"><img src="./images/btn_n_recruit_s_off.gif" alt="채용공고"><span class="hidden">채용 공고</span></a></li>
-				<li><a href="#"><img src="./images/btn_n_discount_s_off.gif" alt="제휴할인 바로가기"><span class="hidden">제휴 할인</span></a></li>
+				<li><a href="#"><img class="qImg0" src="images/btn_n_reservation_s_off.gif" alt="티켓예매"></a></li>
+				<li><a href="#"><img class="qImg1" src="images/btn_n_discount_s_off.gif" alt="제휴할인"></a></li>
+				<li><a href="#"><img class="qImg2" src="images/btn_n_way_s_off.gif" alt="오시는길"></a></li>
+				<li><a href="#"><img class="qImg3" src="images/btn_n_recruit_s_off.gif" alt="채용공고"></a></li>
+				<li><a href="#"><img class="qImg4" src="images/btn_n_rental_s_off.gif" alt="대관안내"></a></li>
 			</ul>
 		</div>
 	</nav>
+	
 	<!-- 메인이미지 영역 -->
 	<div id="visual">
 		<!-- 이미지 영역 -->
@@ -154,25 +112,12 @@
 				<h2 class="hidden">공지 영역</h2>
 				<div class="wrap">
 					<article>
-						<div class="pic1">
-							<a href="#">
-								<img src="./images/ticket.jpg" alt="공지사항">
-							</a>
-						</div>
+						<div class="pic"><a href="#"><img src="./images/ticket.jpg" alt="공지사항"></a></div>
+					</article>
+					<article><div class="pic"><a href="#"><img src="./images/ticketopen.jpg" alt="공지사항"></a></div>
 					</article>
 					<article>
-						<div class="pic2">
-							<a href="#">
-								<img src="./images/ticketopen.jpg" alt="공지사항">
-							</a>
-						</div>
-					</article>
-					<article>
-						<div class="pic3">
-							<a href="#">
-								<img src="./images/corona_etiquette.jpg" alt="공지사항">
-							</a>
-						</div>
+						<div class="pic"><a href="#"><img src="./images/corona_etiquette.jpg" alt="공지사항"></a></div>
 					</article>
 				</div>
 				<div class="notice">
@@ -183,7 +128,7 @@
 						<a href="#">개인정보처리방침 개정 안내 2021-11-15</a>
 						<a href="#">[오픈일시변경] 뮤지컬 <지킬앤하이드> 5차 티켓오픈 안내 2021-11-26</a>
 						<a href="#"><지킬앤하이드> 공연 정상 진행 안내(11/21) 2021-11-21</a>
-						<a href="#"><지킬앤하이드> 공연 취소 안내(11/20)</a>
+						<a href="#"><지킬앤하이드> 공연 취소 안내(11/20) 2021-11-20</a>
 						<a href="#">회원약관 개정 안내 2021-10-26</a>
 					</article>
 			</div>
@@ -192,39 +137,55 @@
 		<figure id="infoImg">
 			<div class="img_box">
 				<h2 class="hidden">공연 소개 이미지 영역</h2>
-				<img class="img1" src="./images/review1.png" alt="공연평 이미지">
-				<img class="img2" src="./images/review2.png" alt="공연평 이미지">
-				<img class="img3" src="./images/review3.png" alt="공연평 이미지">
-				<img class="img4" src="./images/review4.png" alt="공연평 이미지">
+				<img class="rImg1" src="./images/review1.png" alt="공연 소개 이미지">
+				<img class="rImg2" src="./images/review2.png" alt="공연 소개 이미지">
+				<img class="rImg3" src="./images/review3.png" alt="공연 소개 이미지">
+				<img class="rImg4" src="./images/review4.png" alt="공연 소개 이미지">
 			</div class="img_box">
 
 			<div class="video_box">
-				<p class="vedeo">
-					<iframe src="https://www.youtube.com/embed/sOE6i_kItmI?ecver=2" allow="autoplay; encrypted-media" width="640" height="400" frameborder="0"></iframe>
-				</p>
-
+				<div class="video">
+					<iframe class="video0" src="https://www.youtube.com/embed/nLiHIOp5lbA" title="YouTube video player" allow="autoplay; encrypted-media">상견례스케치</iframe>
+					<iframe class="video1" src="https://www.youtube.com/embed/2eH6AMQJZyE" title="YouTube video player" allow="autoplay; encrypted-media">지킬앤 하이드 신성록</iframe>
+					<iframe class="video2" src="https://www.youtube.com/embed/BXS9F0ldQZs" title="YouTube video player" allow="autoplay; encrypted-media">지킬앤 하이드 홍광호</iframe>
+					<iframe class="video3" src="https://www.youtube.com/embed/sOE6i_kItmI?ecver=2" title="YouTube video player" allow="autoplay; encrypted-media" >지킬앤 하이드 류정한</iframe>
+					<iframe class="video4" src="https://www.youtube.com/embed/D28jJfn2nk8" title="YouTube video player" allow="autoplay; encrypted-media">지킬앤하이드 캐스트소개</iframe>
+					<iframe class="video5" src="https://www.youtube.com/embed/yY8A5IDfztM" title="YouTube video player" allow="autoplay; encrypted-media">엠마 최수진</iframe>
+					<iframe class="video6" src="https://www.youtube.com/embed/7-Iam4YWf54" title="YouTube video player"	allow= autoplay; encrypted-medin>엠마 조정은</iframe>
+					<iframe class="video7" src="https://www.youtube.com/embed/iayX1waBauE" title="YouTube video player" allow="autoplay; encrypted-media">엠마 민경아</iframe0>
+					<iframe class="video8" src="https://www.youtube.com/embed/0kNlSQmr7rg" title="YouTube video player" allow="autoplay; encrypted-media">루시 윤공주</iframe>
+					<iframe class="video9" src="https://www.youtube.com/embed/O4rDnhrJGjc" title="YouTube video player" allow="autoplay; encrypted-media">루시 아이비</iframe>
+					<iframe class="video10" src="https://www.youtube.com/embed/CCef30AOvfQ" title="YouTube video player" allow="autoplay; encrypted-media">루시 선민</iframe>
+					<iframe class="video11" src="https://www.youtube.com/embed/i9P6CovPajg" title="YouTube video player" allow="autoplay; encrypted-media">신성록 인터뷰</iframe>
+					<iframe class="video12"src="https://www.youtube.com/embed/DIxzmE4RzTY" title="YouTube video player" allow="autoplay; encrypted-medin">홍광호 인터뷰</iframe>
+					<iframe class="video13" src="https://www.youtube.com/embed/D28jJfn2nk8" title="YouTube video player" allow="autoplay; encrypted-media">류정한 인터뷰</iframe>
+				</div>
 			</div>
+
 			<div id="slideImg">
 				<div class="movebox">
-					<ul class="clfix">
-						<li><img src="./images/지킬_하이드 신성록.jpg"><a href="#"></a></img></li>
-						<li><img src="./images/지킬앤하이드 상견례 스케치.jpg"><a href="#"></a></img></li>
-						<li><img src="./images/지킬_하이드 홍광호.jpg"><a href="#"></a></img></li>
-						<li><img src="./images/지킬_하이드 류정한.jpg"><a href="#"></a></img></li>
-						<li><img src="./images/캐스트 소개.jpg"><a href="#"></a></img></li>
-						<li><img src="./images/엠마 최수진.jpg"><a href="#"></a></img></li>
-						<li><img src="./images/엠마 조정은.jpg"><a href="#"></a></img></li>
-						<li><img src="./images/엠마 민경아.jpg"><a href="#"></a></img></li>
-						<li><img src="./images/루시 윤공주.jpg"><a href="#"></a></img></li>
-						<li><img src="./images/루시 아이비.jpg"><a href="#"></a></img></li>
-						<li><img src="./images/루시 선민.jpg"><a href="#"></a></img></li>
-						<li><img src="./images/키워드인터뷰 신성록.jpg"><a href="#"></a></img></li>
-						<li><img src="./images/키워드인터뷰 홍광호.jpg"><a href="#"></a></img></li>
-						<li><img src="./images/키워드인터뷰 류정한.jpg"><a href="#"></a></img></li>
-					</ul>
+					<div class="clfix">
+						<img class="img0" src="./images/지킬앤하이드 상견례 스케치.jpg" alt="지킬앤하이드 상견례 스케치 영상링크"></img>
+						<img class="img1" src="./images/지킬_하이드 신성록.jpg" alt="지킬앤하이드 신성록 영상링크"></img>
+						<img class="img2" src="./images/지킬_하이드 홍광호.jpg" alt="지킬앤하이드 홍광호 영상링크"></img>
+						<img class="img3" src="./images/지킬_하이드 류정한.jpg" alt="지킬앤하이드 류정한 영상링크"></img>
+						<img class="img4" src="./images/캐스트 소개.jpg" alt="지킬앤하이드 캐스트소개 영상링크"></img>
+						<img class="img5" src="./images/엠마 최수진.jpg" alt="엠마 최수진 영상링크"></img>
+						<img class="img6" src="./images/엠마 조정은.jpg" alt="엠마 조정은 영상링크"></img>
+						<img class="img7" src="./images/엠마 민경아.jpg" alt="엠마 민경아 영상링크"></img>
+						<img class="img8" src="./images/루시 윤공주.jpg" alt="루시 윤공주 영상링크"></img>
+						<img class="img9" src="./images/루시 아이비.jpg" alt="루시 아이비 영상링크"></img>
+						<img class="img10" src="./images/루시 선민.jpg" alt="루시 선민 영상링크"></img>
+						<img class="img11" src="./images/키워드인터뷰 신성록.jpg" alt="키워드인터뷰 신성록 영상링크"></img>
+						<img class="img12" src="./images/키워드인터뷰 홍광호.jpg" alt="키워드인터뷰 홍광호 영상링크"></img>
+						<img class="img13" src="./images/키워드인터뷰 류정한.jpg" alt="키워드인터뷰 류정한 영상링크"></img>
+					</div>
 				</div>
-				<button class="btnleft"><img src="./images/btn_movie_left.gif" alt="왼쪽으로 이동"></button>
-				<button class="btnright"><img src="./images/btn_movie_right.gif" alt="오른쪽으로 이동"></button>
+				<div class="leftRight">
+					<img class="btnleft" src="./images/btn_movie_left.gif" alt="왼쪽으로 이동">
+					<img class="btnright" src="./images/btn_movie_right.gif" alt="오른쪽으로 이동">
+				</div>
+
 			</div>
 		</figure>
 		
