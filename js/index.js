@@ -1,4 +1,4 @@
-
+'use strict';
 //메인 이미지 페이드
 setTimeout(function () {
   $("#mainImg video").fadeIn(5000).get(0).play();
